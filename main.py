@@ -24,7 +24,9 @@ async def pagos(jugadores: List[Jugadores]):
         minimo=niveles[nivel]
         bono=item['bono']
         sueldoFijo=item['sueldo']
-        individual=goles_individuales(item['goles'],minimo)
+        goles=item['goles']
+        
+        individual=goles_individuales(goles,minimo)
         golesPorEquipo=goles_por_equipo(totalGolesEquipo,totalGolesMinimoPorEquipo)
         alcanceTotal=alcance_total(individual,golesPorEquipo)
         totalBono=calcular_bono(bono,alcanceTotal)
