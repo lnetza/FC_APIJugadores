@@ -3,7 +3,7 @@ def goles_por_equipo(golesPorEquipo,golesMinimoPorEquipo):
     return (golesPorEquipo/golesMinimoPorEquipo)*100
 
 def goles_individuales(goles,minimo):
-    return (goles/minimo)*100
+    return 0 if goles<0 else (goles/minimo)*100
 
 def alcance_total(porcentajeIndividual,porcentajePorEquipo):
     return ((porcentajeIndividual+porcentajePorEquipo)/2)/100

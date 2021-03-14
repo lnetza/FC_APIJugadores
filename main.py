@@ -18,7 +18,7 @@ async def pagos(jugadores: List[Jugadores]):
     json_data = jsonable_encoder(jugadores)
     totalGolesPorEquipo=0
     totalGolesMinimoPorEquipo=0
-    totalBono=0
+    
     for item in json_data:
         nivel=item['nivel']
         minimo=niveles[nivel]
