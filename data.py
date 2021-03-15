@@ -5,9 +5,3 @@ niveles = {
     "Cuauh":20
 
 }
-
-equipos = [
-    "ROJO",
-    "AZUL",
-    "VERDE"
-]
