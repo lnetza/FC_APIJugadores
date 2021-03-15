@@ -3,13 +3,15 @@ from operator import itemgetter
 from itertools import groupby
 from fastapi.responses import JSONResponse
 
+def validar_goles(goles):
+    return 0 if goles<0 else goles
 
 def goles_equipo(data):
     data.sort(key=itemgetter('equipo'))
 
     totalGolesPorEquipo = {}
 
-    for item, elements in groupby(data, key=itemgetter('equipo')):
+    for equipo, elements in groupby(data, key=itemgetter('equipo')):
 
         sumaGolesMinimoEquipo = 0
         sumaGolesEquipo = 0
@@ -34,7 +36,7 @@ def sueldo_completo(data, totalGolesEquipo):
     for i in data:
         equipo = i['equipo']
         nivel = i['nivel']
-        goles = i['goles']
+        goles = validar_goles(i['goles'])
         bono = i['bono']
         sueldo = i['sueldo']
         minimo = niveles[nivel]
