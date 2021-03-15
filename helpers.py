@@ -1,31 +1,46 @@
 from data import niveles
+from operator import itemgetter
+from itertools import groupby
+from fastapi.responses import JSONResponse
 
-def goles_por_equipo(golesPorEquipo,golesMinimoPorEquipo):
-    return (golesPorEquipo/golesMinimoPorEquipo)*100
 
-def goles_individuales(goles,minimo):
-    return 0 if goles<0 else (goles/minimo)*100
+def goles_equipo(data):
+    data.sort(key=itemgetter('equipo'))
 
-def alcance_total(porcentajeIndividual,porcentajePorEquipo):
-    return (porcentajeIndividual+porcentajePorEquipo)/2
+    totalGolesPorEquipo = {}
 
-def calcular_bono(bono,alcanceTotal):
-    return (alcanceTotal/100)*bono
+    for item, elements in groupby(data, key=itemgetter('equipo')):
 
-def calcular_sueldo_completo(sueldoFijo,totalBono):
-    return round(sueldoFijo+totalBono,2)
+        sumaGolesMinimoEquipo = 0
+        sumaGolesEquipo = 0
+        totalGoles = 0
+        for i in elements:
 
-def suma_goles_equipo(data):
-    sumaGolesPorEquipo=0
-    for item in data:
-        sumaGolesPorEquipo +=item['goles']
-    return sumaGolesPorEquipo
+            equipo = i['equipo']
+            nivel = i['nivel']
+            minimo = niveles[nivel]
+            sumaGolesMinimoEquipo += minimo
+            sumaGolesEquipo += i['goles']
+            totalGoles = (sumaGolesEquipo/sumaGolesMinimoEquipo)*100
 
-def suma_goles_minimo_equipo(data):
-    sumaGolesMinimoEquipo=0
-    for item in data:
-        nivel=item['nivel']
-        minimo=niveles[nivel]
-        sumaGolesMinimoEquipo +=minimo
-    return sumaGolesMinimoEquipo
+        totalGolesPorEquipo[equipo] = totalGoles
 
+    return totalGolesPorEquipo
+
+
+def sueldo_completo(data, totalGolesEquipo):
+    golesIndividuales = 0
+
+    for i in data:
+        equipo = i['equipo']
+        nivel = i['nivel']
+        goles = i['goles']
+        bono = i['bono']
+        sueldo = i['sueldo']
+        minimo = niveles[nivel]
+        golesIndividuales = round((((((goles/minimo*100)+(totalGolesEquipo[equipo]))/2)/100)*bono)+sueldo, 2)
+        i['sueldo_completo'] = golesIndividuales
+        i.update({"goles_minimos": minimo})
+        i.pop("nivel")
+
+    return JSONResponse(content={"Jugadores": data})
