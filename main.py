@@ -7,7 +7,7 @@ import json
 from fastapi.responses import JSONResponse
 from fastapi.encoders import jsonable_encoder
 
-app = FastAPI()
+app = FastAPI(title="Resuelve FC")
 
 
 @app.post("/jugadores/")
