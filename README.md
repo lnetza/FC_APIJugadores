@@ -77,7 +77,7 @@ instalando `virtualenv` con el siguiente comando: `pip install virtualenv`
 
 Dentro de la carpeta `FC_APIJugadores` crea un nuevo entorno virtual ejecutando: `python -m venv env`  
 
-Una vez creado el entorno; procede a activarlo ingresando a la carpeta `..\env\Scripts` y ejecuta  
+Una vez creado el entorno; procede a activarlo ingresando a la carpeta `FC_APIJugadores\server\env\Scripts` y ejecuta el comando:
    `$ activate`
 
 Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias necesarias, ejecutando:
@@ -96,7 +96,7 @@ E ingresa a la siguiente URL para empezar a utilizar la aplicación: http://127.
 
 ### Ejecutar Pruebas
 
-Este proyecto tiene un test referente el enpoint '/jugadores/', ejecuta `pytest` dentro de la carpeta `FC_APIJugadores/server`
+Este proyecto tiene un test referente al enpoint '/jugadores/', ejecuta `pytest` dentro de la carpeta `FC_APIJugadores/server`
 
     $ pytest
 
