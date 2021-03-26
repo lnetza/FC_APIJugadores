@@ -73,13 +73,14 @@ Para implementar de manera local la aplicación sigue los siguientes pasos:
 ### Instalación
 
 Si ya te encuentras dentro de la carptea `FC_APIJugadores` crea un entorno virtual,
-instalando `virtualenv` con el siguiente comando `pip install virtualenv`
+instalando `virtualenv` con el siguiente comando: `pip install virtualenv`
 
-Dentro de la carpeta `FC_APIJugadores` crea un nuevo entorno virtual ejecutando: `python -m venv env`
+Dentro de la carpeta `FC_APIJugadores` crea un nuevo entorno virtual ejecutando: `python -m venv env`.
+
 Una vez creado el entorno; procede a activarlo ingresando a la carpeta `..\env\Scripts` y ejecuta 
    `$ activate`
 
-Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias ncesarias, ejecutando:
+Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias necesarias, ejecutando:
   `$ pip install requirements.txt`
 
 ### Información de Uso
