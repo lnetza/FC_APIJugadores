@@ -84,10 +84,9 @@ Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias n
 
 ### Información de Uso
 
-Escribir el siguiente comando par ejecutar la aplicación
-Ingresa a la carpeta server es decir `FC_APIJugadores/server`
+Escribir el siguiente comando par ejecutar la aplicación, dentro de la carpeta `FC_APIJugadores/server`
     
-Ejecuta el comando:
+Ejecuta el siguiente comando:
   `$ uvicorn main:app --reload`
     
             
