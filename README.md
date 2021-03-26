@@ -64,10 +64,10 @@ Para implementar de manera local la aplicación sigue los siguientes pasos:
 
 ### Setup
 
-  # Clona el repositorio con la siguiente URL
+    # Clona el repositorio con la siguiente URL
     $ git clone https://github.com/lnetza/FC_APIJugadores.git
   
-  # entra a la carpte FC_APIJugadores
+    # entra a la carpte FC_APIJugadores
     $ cd FC_APIJugadores
             
 ### Instalación
@@ -86,14 +86,15 @@ Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias
 
 Escribir el siguiente comando par ejecutar la aplicación
 Ingresa a la carpeta server es decir `FC_APIJugadores/server`
-Ejecuta el comando: $ uvicorn main:app --reload
+    # Ejecuta el comando: 
+    $ uvicorn main:app --reload
 E ingresa a la siguiente URL para empezar a utilizar la aplicación: http://127.0.0.1:8000/docs
 
 
 ### Ejecutar Pruebas
 
-Este proyecto tiene un test referente el enpoint '/jugadores/', para ejecutarlo
-$ cd FC_APIJugadores/server
-$ pytest
+Este proyecto tiene un test referente el enpoint '/jugadores/', ejecuta `pytest` dentro de la carpeta `FC_APIJugadores/server`
+
+      $ pytest
 
 
