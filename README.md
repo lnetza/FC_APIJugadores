@@ -77,10 +77,10 @@ instalando `virtualenv` si no lo tienes instalado.
 
 Crea un nuevo entorno virtual ejecutando: `python -m venv env`
 Una vez creado el entorno; procede a activarlo ingresando a la carpeta `..\env\Scripts` y ejecuta 
-   $ activate
+   `$ activate`
 
 Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias
-  $ pip install requirements.txt
+  `$ pip install requirements.txt`
 
 ### Información de Uso
 
@@ -88,7 +88,7 @@ Escribir el siguiente comando par ejecutar la aplicación
 Ingresa a la carpeta server es decir `FC_APIJugadores/server`
     
 Ejecuta el comando:
-  $ uvicorn main:app --reload
+  `$ uvicorn main:app --reload`
     
             
 E ingresa a la siguiente URL para empezar a utilizar la aplicación: http://127.0.0.1:8000/docs
