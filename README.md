@@ -72,20 +72,20 @@ Para implementar de manera local la aplicación sigue los siguientes pasos:
             
 ### Instalación
 
-Si ya te encuentras dentro de la carptea `FC_APIJugadores` crea un entorno virtual,
+Si ya te encuentras dentro de la carptea `FC_APIJugadores` crea un entorno virtual,  
 instalando `virtualenv` con el siguiente comando: `pip install virtualenv`
 
-Dentro de la carpeta `FC_APIJugadores` crea un nuevo entorno virtual ejecutando: `python -m venv env`.
+Dentro de la carpeta `FC_APIJugadores` crea un nuevo entorno virtual ejecutando: `python -m venv env`  
 
-Una vez creado el entorno; procede a activarlo ingresando a la carpeta `..\env\Scripts` y ejecuta 
+Una vez creado el entorno; procede a activarlo ingresando a la carpeta `..\env\Scripts` y ejecuta  
    `$ activate`
 
 Ahora regresa a la carpeta `FC_APIJugadores/server` para instalar dependencias necesarias, ejecutando:
-  `$ pip install requirements.txt`
+  `$ pip install -r requirements.txt`
 
 ### Información de Uso
 
-Escribir el siguiente comando par ejecutar la aplicación, dentro de la carpeta `FC_APIJugadores/server`
+Escribir el siguiente comando par ejecutar la aplicación, dentro de la carpeta `FC_APIJugadores/server`  
     
 Ejecuta el siguiente comando:
   `$ uvicorn main:app --reload`
@@ -98,6 +98,6 @@ E ingresa a la siguiente URL para empezar a utilizar la aplicación: http://127.
 
 Este proyecto tiene un test referente el enpoint '/jugadores/', ejecuta `pytest` dentro de la carpeta `FC_APIJugadores/server`
 
-      $ pytest
+    $ pytest
 
 
