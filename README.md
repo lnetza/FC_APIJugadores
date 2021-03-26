@@ -67,7 +67,7 @@ Para implementar de manera local la aplicación sigue los siguientes pasos:
     # Clona el repositorio con la siguiente URL
     $ git clone https://github.com/lnetza/FC_APIJugadores.git
   
-    # entra a la carpte FC_APIJugadores
+    # entra a la carpeta FC_APIJugadores
     $ cd FC_APIJugadores
             
 ### Instalación
